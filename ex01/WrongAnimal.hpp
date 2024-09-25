@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 16:57:11 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 19:34:16 by mstrauss         ###   ########.fr       */
+/*   Created: 2024/09/25 16:57:09 by mstrauss          #+#    #+#             */
+/*   Updated: 2024/09/25 17:31:19 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-#include "Animal.hpp"
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
+#include <iostream>
+#include <string>
 
-class Cat : public Animal
+class WrongAnimal
 {
 public:
-	Cat();
-	Cat(const std::string &type);
-	Cat(Cat const &src);
-	virtual ~Cat();
-	Cat &operator=(Cat const &src);
+	WrongAnimal();
+	WrongAnimal(const std::string &type);
+	WrongAnimal(WrongAnimal const &src);
+	virtual ~WrongAnimal();
+	WrongAnimal &operator=(WrongAnimal const &src);
 
-	void makeSound() const override;
+	std::string getType(void) const;
+	void setType(const std::string &type);
+
+	virtual void makeSound() const;
+
+protected:
+	std::string _type;
 };
 
 #endif

@@ -1,48 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 16:57:12 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 19:20:02 by mstrauss         ###   ########.fr       */
+/*   Created: 2024/09/25 16:57:13 by mstrauss          #+#    #+#             */
+/*   Updated: 2024/09/25 19:36:34 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
 
-Dog::Dog() : Animal("Dog")
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	std::cout << "Dog created using default constructor" << std::endl;
+	std::cout << "WrongCat created using default constructor" << std::endl;
 }
 
-Dog::Dog(const std::string &type) : Animal(type)
+WrongCat::WrongCat(const std::string &type) : WrongAnimal(type)
 {
-	std::cout << "Dog created using parameterized  constructor" << std::endl;
+	std::cout << "WrongCat created using parameterized  constructor" << std::endl;
 }
 
-Dog::Dog(Dog const &src) : Animal(src)
+WrongCat::WrongCat(WrongCat const &src) : WrongAnimal(src)
 {
-	std::cout << "Dog created using copy constructor" << std::endl;
+	std::cout << "WrongCat created using copy constructor" << std::endl;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                Deconstructor                               */
 /* -------------------------------------------------------------------------- */
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-	std::cout << "Dog destroyed" << std::endl;
+	std::cout << "WrongCat destroyed" << std::endl;
 }
 
 /* ------------------------------ Copy operator ----------------------------- */
-Dog &Dog::operator=(Dog const &src)
+WrongCat &WrongCat::operator=(WrongCat const &src)
 {
 	this->_type = src._type;
 	return *this;
@@ -51,7 +49,7 @@ Dog &Dog::operator=(Dog const &src)
 /* -------------------------------------------------------------------------- */
 /*                                   Actions                                  */
 /* -------------------------------------------------------------------------- */
-void Dog::makeSound() const
+void WrongCat::makeSound() const
 {
-	std::cout << "* Woof *" << std::endl;
+	std::cout << "* BzzzRZzzzzzzrRRRRRRrr *" << std::endl;
 }

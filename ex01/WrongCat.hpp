@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:11 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 19:34:16 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/25 19:34:25 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-#include "Animal.hpp"
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 public:
-	Cat();
-	Cat(const std::string &type);
-	Cat(Cat const &src);
-	virtual ~Cat();
-	Cat &operator=(Cat const &src);
+	WrongCat();
+	WrongCat(const std::string &type);
+	WrongCat(WrongCat const &src);
+	virtual ~WrongCat();
+	WrongCat &operator=(WrongCat const &src);
 
 	void makeSound() const override;
 };

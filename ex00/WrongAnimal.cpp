@@ -1,57 +1,70 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:12 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 19:20:02 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/25 19:20:03 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
-
-Dog::Dog() : Animal("Dog")
+/* --------------------------------- Default -------------------------------- */
+WrongAnimal::WrongAnimal(void) : _type("extremely_generic_WrongAnimal")
 {
-	std::cout << "Dog created using default constructor" << std::endl;
+	std::cout << "WrongAnimal created using default constructor" << std::endl;
 }
 
-Dog::Dog(const std::string &type) : Animal(type)
+/* ------------------------------ Parameterized ----------------------------- */
+WrongAnimal::WrongAnimal(const std::string &type) : _type(type)
 {
-	std::cout << "Dog created using parameterized  constructor" << std::endl;
+	std::cout << "WrongAnimal created using parameterized constructor" << std::endl;
 }
 
-Dog::Dog(Dog const &src) : Animal(src)
+/* ---------------------------------- Copy ---------------------------------- */
+WrongAnimal::WrongAnimal(WrongAnimal const &src) : _type(src._type)
 {
-	std::cout << "Dog created using copy constructor" << std::endl;
+	std::cout << "WrongAnimal created using copy constructor" << std::endl;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                Deconstructor                               */
 /* -------------------------------------------------------------------------- */
-Dog::~Dog()
+WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << "Dog destroyed" << std::endl;
+	std::cout << "WrongAnimal destroyed" << std::endl;
 }
 
 /* ------------------------------ Copy operator ----------------------------- */
-Dog &Dog::operator=(Dog const &src)
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &src)
 {
 	this->_type = src._type;
 	return *this;
 }
 
 /* -------------------------------------------------------------------------- */
+/*                              Getters & Setters                             */
+/* -------------------------------------------------------------------------- */
+std::string WrongAnimal::getType(void) const
+{
+	return this->_type;
+}
+
+void WrongAnimal::setType(const std::string &type)
+{
+	this->_type = type;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                   Actions                                  */
 /* -------------------------------------------------------------------------- */
-void Dog::makeSound() const
+void WrongAnimal::makeSound(void) const
 {
-	std::cout << "* Woof *" << std::endl;
+	std::cout << "* extremely generic WrongAnimal sound *" << std::endl;
 }
