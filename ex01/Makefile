@@ -6,11 +6,11 @@
 #    By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 17:02:44 by mstrauss          #+#    #+#              #
-#    Updated: 2024/09/25 19:36:02 by mstrauss         ###   ########.fr        #
+#    Updated: 2024/09/26 14:01:18 by mstrauss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	animals
+NAME		=	wof
 
 CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++17 -stdlib=libc++
@@ -23,13 +23,15 @@ SRC 		=	main.cpp\
 				Dog.cpp\
 				Cat.cpp\
 				WrongAnimal.cpp\
-				WrongCat.cpp
+				WrongCat.cpp\
+				Brain.cpp
 				
 HEADER		=	Animal.hpp\
 				Dog.hpp\
 				Cat.hpp\
 				WrongAnimal.hpp\
-				WrongCat.hpp
+				WrongCat.hpp\
+				Brain.hpp
 
 OBJ_DIR		=	./obj
 OBJ 		=	$(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))

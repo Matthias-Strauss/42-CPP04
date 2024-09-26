@@ -1,55 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 16:57:12 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 14:43:05 by mstrauss         ###   ########.fr       */
+/*   Created: 2024/09/25 19:46:21 by mstrauss          #+#    #+#             */
+/*   Updated: 2024/09/26 13:43:28 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-
-#include "Dog.hpp"
+#include "Brain.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
 
-Dog::Dog() : Animal("Dog"), _brain(new Brain())
+Brain::Brain()
 {
-	std::cout << "Dog created using default constructor" << std::endl;
+	std::cout << "Brain created using default constructor" << std::endl;
 }
 
-Dog::Dog(const std::string &type) : Animal(type), _brain(new Brain())
+Brain::Brain(const std::string &idea)
 {
-	std::cout << "Dog created using parameterized  constructor" << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = idea;
+	std::cout << "Brain created using parameterized constructor" << std::endl;
 }
 
-Dog::Dog(Dog const &src) : Animal(src), _brain(new Brain(*src._brain))
+Brain::Brain(Brain const &src)
 {
-	std::cout << "Dog created using copy constructor" << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = src._ideas[i];
+	std::cout << "Brain created using copy constructor" << std::endl;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                Deconstructor                               */
 /* -------------------------------------------------------------------------- */
-Dog::~Dog()
+
+Brain::~Brain()
 {
-	delete _brain;
-	std::cout << "Dog destroyed" << std::endl;
+	std::cout << "Brain destroyed" << std::endl;
 }
 
 /* ------------------------------ Copy operator ----------------------------- */
-Dog &Dog::operator=(Dog const &src)
+Brain &Brain::operator=(Brain const &src)
 {
 	if (this != &src)
 	{
-		Animal::operator=(src);
-		delete _brain;
-		_brain = new Brain(*src._brain);
+		for (int i = 0; i < 100; i++)
+			this->_ideas[i] = src._ideas[i];
 	}
 	return *this;
 }
@@ -57,15 +58,13 @@ Dog &Dog::operator=(Dog const &src)
 /* -------------------------------------------------------------------------- */
 /*                              Getters & Setters                             */
 /* -------------------------------------------------------------------------- */
-Brain *Dog::getBrain() const
+
+std::string Brain::getIdea(int i) const
 {
-	return _brain;
+	return (this->_ideas[i]);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                   Actions                                  */
-/* -------------------------------------------------------------------------- */
-void Dog::makeSound() const
+void Brain::setIdea(int i, const std::string &idea)
 {
-	std::cout << "* Woof *" << std::endl;
+	this->_ideas[i] = idea;
 }
