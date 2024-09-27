@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:12 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 15:40:38 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/26 16:26:53 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void Animal::setType(const std::string &type)
 /* -------------------------------------------------------------------------- */
 /*                                   Actions                                  */
 /* -------------------------------------------------------------------------- */
-void Animal::makeSound(void) const
-{
-	std::cout << "* extremely generic animal sound *" << std::endl;
-}
+// void Animal::makeSound(void) const
+// {
+// 	std::cout << "* extremely generic animal sound *" << std::endl;
+// }
