@@ -27,7 +27,7 @@ public:
 	std::string getType(void) const;
 	void setType(const std::string &type);
 
-	virtual void makeSound() const;
+	void makeSound() const;
 
 protected:
 	std::string _type;
