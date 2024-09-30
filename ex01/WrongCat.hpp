@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:11 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 19:34:25 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:39:46 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	virtual ~WrongCat();
 	WrongCat &operator=(WrongCat const &src);
 
-	void makeSound() const override;
+	void makeSound() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 17:02:44 by mstrauss          #+#    #+#              #
-#    Updated: 2024/09/30 16:45:13 by mstrauss         ###   ########.fr        #
+#    Updated: 2024/09/30 19:23:12 by mstrauss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,12 @@ CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++17 -stdlib=libc++
 INC			=   -I$(CURDIR)
 
-vpath %.hpp includes
-
 SRC 		=	main.cpp\
 				Ice.cpp\
 				Cure.cpp\
 				AMateria.cpp\
-				Character.cpp
-
+				Character.cpp\
+				MateriaSource.cpp
 				
 HEADER		=	AMateria.hpp\
 				Ice.hpp\
@@ -33,8 +31,7 @@ HEADER		=	AMateria.hpp\
 				IMateriaSource.hpp\
 				MateriaSource.hpp
 
-OBJ_DIR		=	./obj
-OBJ 		=	$(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
+OBJ 		=	 $(SRC:.cpp=.o)
 
 RM			=	rm -rf
 
@@ -43,7 +40,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ_DIR)/%.o: %.cpp $(HEADER) | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: %.cpp $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 $(OBJ_DIR):

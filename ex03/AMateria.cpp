@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 15:53:20 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 18:08:40 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/30 19:26:46 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
 
-AMateria::AMateria() : _type("default")
-{
-	std::cout << "AMateria default constructor called" << std::endl;
-}
+AMateria::AMateria() : _type("default")	{}
 
 AMateria::AMateria(std::string const &type) : _type(type)
 {

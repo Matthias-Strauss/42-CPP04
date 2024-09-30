@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:04:16 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 14:46:34 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:02:58 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main(int ac, char **av)
 {
-
+	// Animal test(); //uncomment this to tst if Animal Class is instantiable
 	if (ac != 2 || std::stoi(av[1]) <= 0)
 	{
 		std::cout << "Usage: ./wof <number_of_animals>" << std::endl;

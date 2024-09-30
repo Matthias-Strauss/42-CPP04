@@ -6,9 +6,11 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:27:54 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/27 19:49:32 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:30:34 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef ICE_H
 #define ICE_H
