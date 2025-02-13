@@ -6,10 +6,11 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:11 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 19:34:16 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/13 15:08:40 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef CAT_HPP
 #define CAT_HPP
 #include "Animal.hpp"

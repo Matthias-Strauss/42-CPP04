@@ -6,10 +6,11 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:11 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/30 16:42:50 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/13 15:08:40 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef WRONGCAT_HPP
 #define WRONGCAT_HPP
 #include "WrongAnimal.hpp"

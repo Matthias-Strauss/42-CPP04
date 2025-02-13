@@ -6,11 +6,9 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:12 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 19:20:02 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/13 15:06:58 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Dog.hpp"
 
 #include "Dog.hpp"
 

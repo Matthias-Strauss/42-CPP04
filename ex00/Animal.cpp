@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:12 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 19:20:03 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/13 15:06:43 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 /* --------------------------------- Default -------------------------------- */
 Animal::Animal(void) : _type("extremely_generic_animal")
 {
-	std::cout << "Animal created" << std::endl;
+	std::cout << "Animal created using default constructor" << std::endl;
 }
 
 Animal::Animal(const std::string &type) : _type(type)
 {
-	std::cout << "Animal created" << std::endl;
+	std::cout << "Animal created using parameterized constructor" << std::endl;
 }
 
 /* ---------------------------------- Copy ---------------------------------- */
