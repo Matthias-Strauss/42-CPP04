@@ -6,10 +6,11 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:09 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/30 17:48:31 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:29:40 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 #include <iostream>

@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:46:21 by mstrauss          #+#    #+#             */
-/*   Updated: 2025/02/14 17:22:25 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:28:30 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ Brain &Brain::operator=(Brain const &src)
 
 std::string Brain::getIdea(int i) const
 {
-	if (i < 0 || i >= MAX_IDEAS)
+	if (i < 0 || i >= 100)
 	{
 		std::cout << "Error: Idea index out of bounds" << std::endl;
 		return "";
@@ -71,7 +71,7 @@ std::string Brain::getIdea(int i) const
 
 void Brain::setIdea(int i, const std::string &idea)
 {
-	if (i < 0 || i >= MAX_IDEAS)
+	if (i < 0 || i >= 100)
 	{
 		std::cout << "Error: Idea index out of bounds" << std::endl;
 		return;
