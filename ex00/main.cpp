@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:04:16 by mstrauss          #+#    #+#             */
-/*   Updated: 2025/02/13 16:44:22 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 15:27:15 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main()
 		std::cout << "###################" << std::endl;
 		std::cout << "--- Animal Test ---" << std::endl;
 		std::cout << "###################" << std::endl;
+		std::cout << std::endl;
 		const Animal *h = new Animal();
 		const Animal *i = new Dog();
 		const Animal *j = new Cat();
@@ -72,6 +73,7 @@ int main()
 		std::cout << "#########################" << std::endl;
 		std::cout << "--- Wrong Animal Test ---" << std::endl;
 		std::cout << "#########################" << std::endl;
+		std::cout << std::endl;
 		const WrongAnimal *hurr = new WrongAnimal();
 		const WrongAnimal *durr = new WrongCat();
 		const WrongCat *purr = new WrongCat();

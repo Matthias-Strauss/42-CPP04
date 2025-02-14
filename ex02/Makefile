@@ -6,14 +6,14 @@
 #    By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 17:02:44 by mstrauss          #+#    #+#              #
-#    Updated: 2024/09/30 16:44:55 by mstrauss         ###   ########.fr        #
+#    Updated: 2025/02/13 15:13:24 by mstrauss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	wof
 
 CC			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -std=c++17 -stdlib=libc++
+CFLAGS		=	-Wall -Werror -Wextra -Wunused -std=c++17 -stdlib=libc++
 INC			=   -I$(CURDIR)
 
 vpath %.hpp includes
