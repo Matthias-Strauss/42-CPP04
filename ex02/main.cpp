@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:04:16 by mstrauss          #+#    #+#             */
-/*   Updated: 2025/02/14 18:06:23 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 18:11:28 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 int main(int ac, char **av)
 {
 
-	{
-		AAnimal test(); // uncomment to show AAnimal is uninstantiable
-	}
+	// {
+	// 	AAnimal test(); // uncomment to show AAnimal is uninstantiable
+	// }
 
 	{
 		if (ac != 2 || std::stoi(av[1]) <= 0 || std::stoi(av[1]) > 10)
