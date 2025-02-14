@@ -6,7 +6,7 @@
 #    By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 17:02:44 by mstrauss          #+#    #+#              #
-#    Updated: 2025/02/13 15:13:24 by mstrauss         ###   ########.fr        #
+#    Updated: 2025/02/14 17:53:30 by mstrauss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,14 @@ INC			=   -I$(CURDIR)
 vpath %.hpp includes
 
 SRC 		=	main.cpp\
-				Animal.cpp\
+				AAnimal.cpp\
 				Dog.cpp\
 				Cat.cpp\
 				WrongAnimal.cpp\
 				WrongCat.cpp\
 				Brain.cpp
 				
-HEADER		=	Animal.hpp\
+HEADER		=	AAnimal.hpp\
 				Dog.hpp\
 				Cat.hpp\
 				WrongAnimal.hpp\

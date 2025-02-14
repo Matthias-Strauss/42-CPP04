@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:13 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 15:40:21 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 18:02:15 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
 
-Cat::Cat() : Animal("Cat"), _brain(new Brain())
+Cat::Cat() : AAnimal("Cat"), _brain(new Brain())
 {
 	std::cout << "Cat created using default constructor" << std::endl;
 }
 
-Cat::Cat(const std::string &type) : Animal(type), _brain(new Brain())
+Cat::Cat(const std::string &type) : AAnimal(type), _brain(new Brain())
 {
 	std::cout << "Cat created using parameterized constructor" << std::endl;
 }
 
-Cat::Cat(Cat const &src) : Animal(src), _brain(new Brain(*src._brain))
+Cat::Cat(Cat const &src) : AAnimal(src), _brain(new Brain(*src._brain))
 {
 	std::cout << "Cat created using copy constructor" << std::endl;
 }
@@ -45,7 +45,12 @@ Cat &Cat::operator=(Cat const &src)
 {
 	if (this != &src)
 	{
-		Animal::operator=(src);
+		AAnimal::operator=(src);
+		if (!src._brain)
+		{
+			std::cout << "Error: Source brain is null" << std::endl;
+			return *this;
+		}
 		delete _brain;
 		_brain = new Brain(*src._brain);
 	}
@@ -57,6 +62,11 @@ Cat &Cat::operator=(Cat const &src)
 /* -------------------------------------------------------------------------- */
 Brain *Cat::getBrain() const
 {
+	if (!_brain)
+	{
+		std::cout << "Error: Brain is null" << std::endl;
+		return nullptr;
+	}
 	return _brain;
 }
 

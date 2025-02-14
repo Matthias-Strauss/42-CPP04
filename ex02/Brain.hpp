@@ -6,10 +6,11 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:46:23 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 13:45:57 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:49:55 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 

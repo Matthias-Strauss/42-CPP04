@@ -6,17 +6,18 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:10 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 13:56:39 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:54:47 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
 public:
 	Dog();

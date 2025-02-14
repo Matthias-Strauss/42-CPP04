@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:12 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 14:43:05 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 18:02:15 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
 
-Dog::Dog() : Animal("Dog"), _brain(new Brain())
+Dog::Dog() : AAnimal("Dog"), _brain(new Brain())
 {
 	std::cout << "Dog created using default constructor" << std::endl;
 }
 
-Dog::Dog(const std::string &type) : Animal(type), _brain(new Brain())
+Dog::Dog(const std::string &type) : AAnimal(type), _brain(new Brain())
 {
 	std::cout << "Dog created using parameterized  constructor" << std::endl;
 }
 
-Dog::Dog(Dog const &src) : Animal(src), _brain(new Brain(*src._brain))
+Dog::Dog(Dog const &src) : AAnimal(src), _brain(new Brain(*src._brain))
 {
 	std::cout << "Dog created using copy constructor" << std::endl;
 }
@@ -47,7 +47,12 @@ Dog &Dog::operator=(Dog const &src)
 {
 	if (this != &src)
 	{
-		Animal::operator=(src);
+		AAnimal::operator=(src);
+		if (!src._brain)
+		{
+			std::cout << "Error: Source brain is null" << std::endl;
+			return *this;
+		}
 		delete _brain;
 		_brain = new Brain(*src._brain);
 	}
@@ -59,6 +64,11 @@ Dog &Dog::operator=(Dog const &src)
 /* -------------------------------------------------------------------------- */
 Brain *Dog::getBrain() const
 {
+	if (!_brain)
+	{
+		std::cout << "Error: Brain is null" << std::endl;
+		return nullptr;
+	}
 	return _brain;
 }
 

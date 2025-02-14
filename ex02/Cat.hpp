@@ -6,17 +6,18 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:11 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 13:56:14 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:56:35 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 public:
 	Cat();
