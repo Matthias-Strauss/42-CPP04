@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:04:16 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/30 17:46:11 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:25:16 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 int main(int ac, char **av)
 {
 	{
-		if (ac != 2 || std::stoi(av[1]) <= 0)
+		if (ac != 2 || std::stoi(av[1]) <= 0 || std::stoi(av[1]) > 10)
 		{
-			std::cout << "Usage: ./wof <number_of_animals>" << std::endl;
+			std::cout << "Usage: ./wof <number_of_animals(1-10)>" << std::endl;
 			return 1;
 		}
 
@@ -51,13 +51,21 @@ int main(int ac, char **av)
 	}
 	std::cout << std::endl;
 	std::cout << "Deep Copy Test:" << std::endl;
+	std::cout << std::endl;
 	Dog basic("Dog");
+	basic.getBrain()->setIdea(2, "Original Idea of basic Dog");
 	{
+		std::cout << std::endl;
 		std::cout << "--beginning of scope--" << std::endl;
 		Dog tmp = basic;
+		std::cout << "setting tmp dog idea to 'Changed Idea of tmp Dog'" << std::endl;
+		tmp.getBrain()->setIdea(2, "Changed Idea of tmp Dog");
+		std::cout << "basic dog: " << basic.getBrain()->getIdea(2) << std::endl;
+		std::cout << "tmp dog: " << tmp.getBrain()->getIdea(2) << std::endl;
 		std::cout << "--end of scope--" << std::endl;
+		std::cout << std::endl;
 	}
 	basic.makeSound();
-
+	std::cout << "basic dog: " << basic.getBrain()->getIdea(2) << std::endl;
 	return 0;
 }

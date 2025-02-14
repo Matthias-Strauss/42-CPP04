@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:57:12 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/26 14:43:05 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:23:31 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ Dog &Dog::operator=(Dog const &src)
 	if (this != &src)
 	{
 		Animal::operator=(src);
+		if (!src._brain)
+		{
+			std::cout << "Error: Source brain is null" << std::endl;
+			return *this;
+		}
 		delete _brain;
 		_brain = new Brain(*src._brain);
 	}
@@ -59,6 +64,11 @@ Dog &Dog::operator=(Dog const &src)
 /* -------------------------------------------------------------------------- */
 Brain *Dog::getBrain() const
 {
+	if (!_brain)
+	{
+		std::cout << "Error: Brain is null" << std::endl;
+		return nullptr;
+	}
 	return _brain;
 }
 
