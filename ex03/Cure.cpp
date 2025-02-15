@@ -6,29 +6,26 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:27:50 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/27 19:52:52 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/15 18:17:56 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "interface.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
 Cure::Cure() : AMateria("cure")
 {
-	std::cout << "Cure default constructor called" << std::endl;
+	if (DEBUG_MESSAGES)
+		std::cout << YELLOW << "Cure default constructor called" << RESET << std::endl;
 }
 
-Cure::Cure(std::string const &type) : AMateria(type)
+Cure::Cure(Cure const &copy) : AMateria(copy)
 {
-	std::cout << "Cure parameterized constructor called" << std::endl;
-}
-
-Cure::Cure(Cure const &copy)
-{
-	std::cout << "Cure copy constructor called" << std::endl;
-	*this = copy;
+	if (DEBUG_MESSAGES)
+		std::cout << YELLOW << "Cure copy constructor called" << RESET << std::endl;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -36,16 +33,16 @@ Cure::Cure(Cure const &copy)
 /* -------------------------------------------------------------------------- */
 Cure::~Cure()
 {
-	std::cout << "Cure deconstructor called" << std::endl;
+	if (DEBUG_MESSAGES)
+		std::cout << YELLOW << "Cure destructor called" << RESET << std::endl;
 }
 
-/* ------------------------------ Copy operator ----------------------------- */
 Cure &Cure::operator=(Cure const &src)
 {
 	std::cout << "Cure assignation operator called" << std::endl;
 	if (this != &src)
 	{
-		this->_type = src._type;
+		AMateria::operator=(src);
 	}
 	return *this;
 }
@@ -61,5 +58,5 @@ AMateria *Cure::clone() const
 
 void Cure::use(ICharacter &target)
 {
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << GREEN << "* heals " << target.getName() << "'s wounds *" << RESET << std::endl;
 }

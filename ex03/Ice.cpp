@@ -6,29 +6,32 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:27:52 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/27 19:55:09 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/15 18:20:45 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "interface.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                                Constructors                                */
 /* -------------------------------------------------------------------------- */
 Ice::Ice() : AMateria("ice")
 {
-	std::cout << "Ice default constructor called" << std::endl;
+	if (DEBUG_MESSAGES)
+		std::cout << YELLOW << "Ice default constructor called" << RESET << std::endl;
 }
 
-Ice::Ice(std::string const &type) : AMateria(type)
-{
-	std::cout << "Ice parameterized constructor called" << std::endl;
-}
+// Not needed because Ice can only have type Ice.
+// Ice::Ice(std::string const &type) : AMateria(type)
+// {
+// 	std::cout << "Ice parameterized constructor called" << std::endl;
+// }
 
-Ice::Ice(Ice const &copy)
+Ice::Ice(const Ice &copy) : AMateria(copy)
 {
-	std::cout << "Ice copy constructor called" << std::endl;
-	*this = copy;
+	if (DEBUG_MESSAGES)
+		std::cout << YELLOW << "Ice copy constructor called" << RESET << std::endl;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -36,16 +39,17 @@ Ice::Ice(Ice const &copy)
 /* -------------------------------------------------------------------------- */
 Ice::~Ice()
 {
-	std::cout << "Ice deconstructor called" << std::endl;
+	if (DEBUG_MESSAGES)
+		std::cout << YELLOW << "Ice destructor called" << RESET << std::endl;
 }
 
 /* ------------------------------ Copy operator ----------------------------- */
-Ice &Ice::operator=(Ice const &src)
+Ice &Ice::operator=(Ice const &other)
 {
 	std::cout << "Ice assignation operator called" << std::endl;
-	if (this != &src)
+	if (this != &other)
 	{
-		this->_type = src._type;
+		AMateria::operator=(other);
 	}
 	return *this;
 }
@@ -61,5 +65,5 @@ AMateria *Ice::clone() const
 
 void Ice::use(ICharacter &target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << GREEN << "* shoots an ice bolt at " << target.getName() << " *" << RESET << std::endl;
 }

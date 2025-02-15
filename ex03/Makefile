@@ -6,15 +6,17 @@
 #    By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 17:02:44 by mstrauss          #+#    #+#              #
-#    Updated: 2025/02/13 15:13:18 by mstrauss         ###   ########.fr        #
+#    Updated: 2025/02/15 18:30:48 by mstrauss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	wof
+NAME		=	interface
 
 CC			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -Wunused -std=c++17 -stdlib=libc++
+CFLAGS		=	-Wall -Werror -Wextra -Wunused -std=c++17 -stdlib=libc++ -fsanitize=address -g
 INC			=   -I$(CURDIR)
+
+vpath %.hpp includes
 
 SRC 		=	main.cpp\
 				Ice.cpp\
@@ -31,7 +33,8 @@ HEADER		=	AMateria.hpp\
 				IMateriaSource.hpp\
 				MateriaSource.hpp
 
-OBJ 		=	 $(SRC:.cpp=.o)
+OBJ_DIR		=	./obj
+OBJ 		=	$(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
 RM			=	rm -rf
 
@@ -40,7 +43,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ_DIR)/%.o: %.cpp $(HEADER)
+$(OBJ_DIR)/%.o: %.cpp $(HEADER) | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 $(OBJ_DIR):

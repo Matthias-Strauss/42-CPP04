@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 18:50:41 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/30 19:13:57 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:31:45 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Character : public ICharacter
 private:
 	std::string _name;
 	AMateria *_materia[4];
+	static AMateria *_floor[100]; // Track unequipped materias
+	static int _floorCount;
 
 public:
 	Character();

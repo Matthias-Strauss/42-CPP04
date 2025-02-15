@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   interface.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 16:27:48 by mstrauss          #+#    #+#             */
-/*   Updated: 2025/02/14 19:10:52 by mstrauss         ###   ########.fr       */
+/*   Created: 2024/02/15 17:57:11 by mstrauss          #+#    #+#             */
+/*   Updated: 2025/02/15 18:56:57 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef CURE_H
-#define CURE_H
+#ifndef INTERFACE_HPP
+#define INTERFACE_HPP
 
-#include <iostream>
-#include <string>
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
+#ifndef DEBUG_MESSAGES
+#define DEBUG_MESSAGES 1
+#endif
 
-class Cure : public AMateria
-{
-public:
-	Cure();
-	Cure(Cure const &copy);
-	~Cure();
-	Cure &operator=(Cure const &rhs);
-
-	AMateria *clone() const;
-
-	void use(ICharacter &target);
-};
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define CYAN "\033[36m"
+#define RESET "\033[0m"
+#define GREEN "\033[32m"
+#define RED "\033[31m"
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:27:54 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/30 18:30:34 by mstrauss         ###   ########.fr       */
+/*   Updated: 2025/02/14 19:10:52 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Ice : public AMateria
 {
 public:
 	Ice();
 	Ice(Ice const &copy);
-	Ice(std::string const &type);
 	~Ice();
 	Ice &operator=(Ice const &rhs);
 
